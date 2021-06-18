@@ -170,7 +170,7 @@
 			</plugin>
 			<!-- File downloading plugin -->
 			<plugin>
-				<groupId>com.github.goldin</groupId>
+				<groupId>com.github.evgeny-goldin</groupId>
 				<artifactId>copy-maven-plugin</artifactId>
 				<version>0.2.5</version>
 				<executions>
