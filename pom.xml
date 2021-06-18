@@ -170,9 +170,9 @@
 			</plugin>
 			<!-- File downloading plugin -->
 			<plugin>
-				<groupId>com.github.evgeny-goldin</groupId>
+				<groupId>com.github.goldin</groupId>
 				<artifactId>copy-maven-plugin</artifactId>
-				<version>0.2.5</version>
+				<version>0.3-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<id>setup-workspace</id>
@@ -233,6 +233,19 @@
 								</resource>
 								<!-- Download remaining dependencies -->
 								<resource>
+        								<dependency>
+            									<groupId>org.apache.maven.plugins</groupId>
+            									<artifactId>maven-dependency-plugin</artifactId>
+            									<!-- http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.apache.maven.plugins%22%20AND%20a%3A%22maven-dependency-plugin%22 -->
+            									<version>2.6</version>
+            									<scope>compile</scope>
+            									<exclusions>
+                									<exclusion>
+                    										<groupId>*</groupId>
+                    										<artifactId>*</artifactId>
+                									</exclusion>
+            									</exclusions>
+        								</dependency>
 									<targetPath>${project.basedir}/jars/libraries/argo/argo/2.25_fixed</targetPath>
 									<dependency>
 										<groupId>argo</groupId>
@@ -240,6 +253,11 @@
 										<version>2.25_fixed</version>
 										<stripVersion>false</stripVersion>
 									</dependency>
+        								<dependency>
+            									<groupId>org.apache.maven</groupId>
+            									<artifactId>maven-artifact</artifactId>
+            									<version>${maven-version}</version>
+        								</dependency>
 								</resource>
 								<resource>
 									<targetPath>${project.basedir}/lib</targetPath>
