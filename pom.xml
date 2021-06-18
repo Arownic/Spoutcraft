@@ -94,6 +94,15 @@
 				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
+    		<repository>
+      			<snapshots>
+        			<enabled>true</enabled>
+      			</snapshots>
+      			<id>central</id>
+      			<name>Maven Repository Switchboard</name>
+      			<url>http://repo1.maven.org/maven2</url>
+    		</repository>
+
 	</repositories>
 
 	<!-- Build plugin repositories -->
@@ -110,8 +119,18 @@
 				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</pluginRepository>
+    		<pluginRepository>
+      			<releases>
+        			<updatePolicy>never</updatePolicy>
+      			</releases>
+      			<snapshots>
+        			<enabled>true</enabled>
+      			</snapshots>
+      			<id>central</id>
+      			<name>Maven Plugin Repository</name>
+      			<url>http://repo1.maven.org/maven2</url>
+    		</pluginRepository>
 	</pluginRepositories>
-
 	<!-- Build configuration -->
 	<build>
 		<defaultGoal>clean install</defaultGoal>
